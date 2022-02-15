@@ -51,6 +51,45 @@
         <div class="page-header text-center">
           <h1>A Virtual Event for the Ages!</h1>
         </div>
+
+        <div class="row">
+          <div class="col-sm-9 text-center">
+            <p>Welcome ladies and gentlemen, boys and girls, to the greatest virtual
+            spectacle of the century!</p>
+            <p>We have world-famous musicians from around the world performing for
+            us tonight. And best of all:<br>THEY'RE ALL GOING TO PERFORM VIRTUALLY!</p>
+          </div>
+          <div class="col-sm-3" id="test">
+            <canvas class="codehs-editor-canvas"></canvas>
+          </div>
+        </div>
       </div>
+      <script>
+    window.onload = function() {
+      var element = document.getElementById('test');
+      var positionInfo = element.getBoundingClientRect();
+      var height = positionInfo.height;
+      var width = positionInfo.width;
+
+      canvasNode.width = width;
+      canvasNode.height = height;
+
+      var circle = new Circle(20);
+      circle.setColor(Color.red);
+      circle.setPosition(getWidth()/2, getHeight()/2);
+      add(circle);
+
+
+        var circle = new Circle(20);
+        circle.setColor(Color.red);
+        circle.setPosition(getWidth()/2, getHeight()/2);
+        add(circle);
+
+        if (typeof start === 'function') {
+            start();
+        }
+    };
+</script>
+
   </body>
 </html>
