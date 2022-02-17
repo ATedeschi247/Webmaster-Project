@@ -48,31 +48,47 @@
       </nav>
       <br><br><br>
       <div class="container">
-        <div class="page-header text-center">
+        <div class="page-header">
           <h1>A Virtual Event for the Ages!</h1>
         </div>
 
         <div class="row">
-          <div class="col-sm-9 text-center">
-            <p>Welcome ladies and gentlemen, boys and girls, to the greatest virtual
-            spectacle of the century!</p>
-            <p>We have world-famous musicians from around the world performing for
-            us tonight. And best of all:<br>THEY'RE ALL GOING TO PERFORM VIRTUALLY!</p>
+          <div class="col-sm-9">
+            <div class="text-center">
+              <p>Welcome ladies and gentlemen, boys and girls, to the greatest virtual
+              spectacle of the century!</p>
+              <p>We have world-famous musicians from around the world performing for
+              us tonight. And best of all:<br>THEY'RE ALL GOING TO PERFORM VIRTUALLY!</p>
+              <p>That's right, we're having all of this talent express itself virtually,
+              and boy do we have the talent! Our concert will feature the amazing
+              works of artists like: </p><br>
+            </div>
+            <ul>
+              <li>Eninem</li>
+              <li>King</li>
+              <li>Fiance</li>
+              <li>Van Hoagland</li>
+              <li>Led Blimp</li>
+              <li>Justin Beaver</li>
+              <li>Kid Larry</li>
+              <li>U4</li>
+            </ul>
           </div>
-          <div class="col-sm-3" id="test">
-            <canvas class="codehs-editor-canvas"></canvas>
+          <div class="col-sm-3 text-center" id="test">
+            <p>Buy tickets now!</p>
+            <a href="#" target="_blank" class="btn btn-success">Buy Tickets Now!</a>
           </div>
         </div>
       </div>
       <script>
     window.onload = function() {
-      var element = document.getElementById('test');
+      var element = document.getElementById("test");
       var positionInfo = element.getBoundingClientRect();
       var height = positionInfo.height;
       var width = positionInfo.width;
 
-      canvasNode.width = width;
-      canvasNode.height = height;
+      document.getElementById("canvas").width = width;
+      document.getElementById("canvas").height = height;
 
       var circle = new Circle(20);
       circle.setColor(Color.red);

@@ -24,11 +24,19 @@ div.page-header > h1 {
   color: #375F1B;
 }
 p {
-  font-family: 'Archivo';
   font-size: 28px;
+}
+p, li {
+  font-family: 'Archivo';
   color: #66B032;
 }
+li:not(nav li) {
+  font-size: 23px;
+  transition: 
+}
+
 div.col-sm-3 {
-  background-color: blue;
-  height: 300px;
+}
+canvas#canvas {
+  margin-left: -15px;
 }
