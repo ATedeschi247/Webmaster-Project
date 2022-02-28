@@ -32,11 +32,26 @@ p, li {
 }
 li:not(nav li) {
   font-size: 23px;
-  transition: 
+  transition:
 }
 
-div.col-sm-3 {
-}
 canvas#canvas {
   margin-left: -15px;
+}
+
+div.main-header {
+  display: block;
+  padding-top: 180px;
+  height: 400px;
+  background-color: #66b032;
+}
+div.main-header > h1 {
+  font-size: 50px;
+}
+div.purchase-banner {
+  background-color: #66b032;
+  height: 300px;
+}
+div.purchase-banner > p {
+  color: #1B3409;
 }
