@@ -1,23 +1,32 @@
 /* navbar stuff */
-nav, nav li, nav div.navbar-header > a {
+nav, nav li, nav div.navbar-header > a:not(.current) {
   background-color: #66B032 !important;
 }
 nav a {
   color: #375F1B !important;
   transition: color 0.4s;
 }
-nav li, nav div.navbar-header > a {
+nav li, nav div.navbar-header > a, nav a.current {
   transition: background-color 0.4s, color 0.4s;
 }
-nav li:hover, nav div.navbar-header:hover a{
+nav a.current {
+  background-color: #5c9f2d !important;
+}
+nav li:hover, nav div.navbar-header:hover > a, nav a.current:hover{
   background-color: #1B3409 !important;
 }
 nav li:hover > a, nav div.navbar-header:hover > a {
   color: #9BD770 !important;
 }
 /* End navbar stuff*/
-h1, p {
+h1, p{
   font-family: 'Archivo';
+}
+table {
+  font-size: 25px;
+}
+td {
+  border: none !important;
 }
 div.page-header > h1 {
   font-size: 47px;
@@ -26,7 +35,7 @@ div.page-header > h1 {
 p {
   font-size: 28px;
 }
-p, li {
+p, li, table {
   font-family: 'Archivo';
   color: #66B032;
 }
@@ -43,7 +52,10 @@ div.main-header {
   display: block;
   padding-top: 180px;
   height: 400px;
-  background-color: #66b032;
+  background-image: url('https://images.pexels.com/photos/167636/pexels-photo-167636.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0% 80%;
 }
 div.main-header > h1 {
   font-size: 50px;
