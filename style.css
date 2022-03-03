@@ -59,11 +59,21 @@ div.main-header {
 }
 div.main-header > h1 {
   font-size: 50px;
+  color: #91FF42;
 }
 div.purchase-banner {
   background-color: #66b032;
   height: 300px;
 }
-div.purchase-banner > p {
+div.purchase-banner h1 {
   color: #1B3409;
+  font-size: 50px;
+}
+div.purchase-banner p {
+  color: #1B3409;
+}
+div.purchase-banner a.btn {
+  font-size: 20px;
+  margin-top: auto;
+  margin-bottom: auto;
 }
