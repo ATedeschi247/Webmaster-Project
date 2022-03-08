@@ -24,6 +24,7 @@ h1, p{
 }
 table {
   font-size: 25px;
+  border: none !important;
 }
 td {
   border: none !important;
