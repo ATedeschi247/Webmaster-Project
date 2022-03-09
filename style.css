@@ -3,8 +3,9 @@ nav, nav li, nav div.navbar-header > a:not(.current) {
   background-color: #66B032 !important;
 }
 nav a {
-  color: #375F1B !important;
+  color: #1B3409 !important;
   transition: color 0.4s;
+  font-family: 'Archivo' !important;
 }
 nav li, nav div.navbar-header > a, nav a.current {
   transition: background-color 0.4s, color 0.4s;
@@ -18,19 +19,27 @@ nav li:hover, nav div.navbar-header:hover > a, nav a.current:hover{
 nav li:hover > a, nav div.navbar-header:hover > a {
   color: #9BD770 !important;
 }
+nav a:not(.navbar-brand) {
+  font-size: 18px;
+}
+nav a.navbar-brand {
+  font-size: 22px;
+}
 /* End navbar stuff*/
 h1, p{
   font-family: 'Archivo';
 }
 table {
   font-size: 25px;
+}
+table.no-border {
   border: none !important;
 }
-td {
+table.no-border td {
   border: none !important;
 }
 div.page-header > h1 {
-  font-size: 47px;
+  font-size: 57px;
   color: #375F1B;
 }
 p {

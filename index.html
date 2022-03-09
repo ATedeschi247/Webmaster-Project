@@ -59,7 +59,7 @@
               and boy do we have the talent! Our concert will feature the amazing
               works of artists like: </p><br>
             </div>
-            <table class="text-center table table-responsive">
+            <table class="text-center no-border table table-responsive">
               <tr>
                 <td>Eninem</td>
                 <td>King</td>
@@ -94,32 +94,5 @@
         </div>
       </div>
       <br><br>
-      <script>
-    window.onload = function() {
-      var element = document.getElementById("test");
-      var positionInfo = element.getBoundingClientRect();
-      var height = positionInfo.height;
-      var width = positionInfo.width;
-
-      document.getElementById("canvas").width = width;
-      document.getElementById("canvas").height = height;
-
-      var circle = new Circle(20);
-      circle.setColor(Color.red);
-      circle.setPosition(getWidth()/2, getHeight()/2);
-      add(circle);
-
-
-        var circle = new Circle(20);
-        circle.setColor(Color.red);
-        circle.setPosition(getWidth()/2, getHeight()/2);
-        add(circle);
-
-        if (typeof start === 'function') {
-            start();
-        }
-    };
-</script>
-
   </body>
 </html>
