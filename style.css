@@ -87,3 +87,20 @@ div.purchase-banner a.btn {
   margin-top: auto;
   margin-bottom: auto;
 }
+td, th {
+  width: 14.29%;
+}
+table.table-bordered td:hover {
+  background-color: #f2f2f2;
+}
+table.table-bordered td:active {
+  background-color: #d9d9d9;
+}
+.btn-success {
+  background-color: #46a046;
+  border-color: #3e8e3e;
+}
+.btn-success:hover {
+  background-color: #367d36;
+  border-color: #2e6b2e;
+}
