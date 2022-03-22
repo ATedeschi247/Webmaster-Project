@@ -104,3 +104,6 @@ table.table-bordered td:active {
   background-color: #367d36;
   border-color: #2e6b2e;
 }
+#placeholder-button {
+  display: none;
+}
