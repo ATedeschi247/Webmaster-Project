@@ -96,6 +96,12 @@ table.table-bordered td:hover {
 table.table-bordered td:active {
   background-color: #d9d9d9;
 }
+td a.btn-success {
+  display: none;
+}
+td:hover a.btn-success {
+  display: initial;
+}
 .btn-success {
   background-color: #46a046;
   border-color: #3e8e3e;
