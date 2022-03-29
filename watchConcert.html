@@ -45,10 +45,21 @@
         </div>
       </div>
     </nav>
+    <canvas class="codehs-editor-canvas" id="canvas" width="300" height="300"></canvas>
     <script>
     window.onload = function() {
       function start() {
-        
+        //Canvas dimensions
+        document.getElementById('canvas').height = window.outerHeight - 125;
+        document.getElementById('canvas').width = window.outerWidth-1;
+
+        var showWillStart = new Text("Get ready! The show will start in:", "50pt Archivo");
+        showWillStart.setColor(Color.black);
+        showWillStart.setPosition(getWidth()/2 - 400, 250);
+        add(showWillStart);
+        //3, 2, 1
+        setTimer(displayNumber, 1000);
+
       }
       // Your code goes here
       if (typeof start === 'function') {
