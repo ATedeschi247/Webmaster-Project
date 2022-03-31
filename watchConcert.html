@@ -48,18 +48,41 @@
     <canvas class="codehs-editor-canvas" id="canvas" width="300" height="300"></canvas>
     <script>
     window.onload = function() {
+      var val = 3;
+      var cont = false;
+
+      var showWillStart = new Text("Get ready! The show will start in:", "50pt Archivo");
+      var stage = new WebImage("https://thumbs.dreamstime.com/b/concert-stage-screen-spotlights-illuminated-vector-cartoon-illustration-empty-scene-rock-festival-show-181940140.jpg");
+
+      function displayNumber() {
+        if(val != 3) {
+          removeAll();
+        }
+        add(showWillStart);
+        var number = new Text(val, "100pt Archivo");
+        number.setPosition(getWidth()/2 - 50, getHeight()/2 -50);
+        add(number);
+        val--;
+        if(val < 1) {
+          cont = true;
+          stopTimer(displayNumber);
+        }
+      }
+      function animate() {
+        
+      }
       function start() {
         //Canvas dimensions
         document.getElementById('canvas').height = window.outerHeight - 125;
         document.getElementById('canvas').width = window.outerWidth-1;
 
-        var showWillStart = new Text("Get ready! The show will start in:", "50pt Archivo");
         showWillStart.setColor(Color.black);
-        showWillStart.setPosition(getWidth()/2 - 400, 250);
+        showWillStart.setPosition(getWidth()/2 - 450, 250);
         add(showWillStart);
         //3, 2, 1
-        setTimer(displayNumber, 1000);
+        setTimer(displayNumber, 1200);
 
+        //initialize stage
       }
       // Your code goes here
       if (typeof start === 'function') {
