@@ -50,39 +50,53 @@
     window.onload = function() {
       var val = 3;
       var cont = false;
+      var moveUp;
 
       var showWillStart = new Text("Get ready! The show will start in:", "50pt Archivo");
       var stage = new WebImage("https://thumbs.dreamstime.com/b/concert-stage-screen-spotlights-illuminated-vector-cartoon-illustration-empty-scene-rock-festival-show-181940140.jpg");
+      var crowd = new WebImage("https://media.istockphoto.com/vectors/crowd-silhouette-vector-id1274685526?k=20&m=1274685526&s=612x612&w=0&h=yuMNU3w7kR_9FJ1wVxxFKPbAnNOl1AlYpfv7xSbIwOg=");
 
-      function displayNumber() {
-        if(val != 3) {
-          removeAll();
-        }
-        add(showWillStart);
-        var number = new Text(val, "100pt Archivo");
-        number.setPosition(getWidth()/2 - 50, getHeight()/2 -50);
-        add(number);
-        val--;
-        if(val < 1) {
-          cont = true;
-          stopTimer(displayNumber);
-        }
-      }
-      function animate() {
-        
-      }
       function start() {
         //Canvas dimensions
         document.getElementById('canvas').height = window.outerHeight - 125;
         document.getElementById('canvas').width = window.outerWidth-1;
 
         showWillStart.setColor(Color.black);
-        showWillStart.setPosition(getWidth()/2 - 450, 250);
+        showWillStart.setPosition(getWidth()/2 - 450, getHeight()/2 - (getHeight()*.25));
         add(showWillStart);
-        //3, 2, 1
-        setTimer(displayNumber, 1200);
 
-        //initialize stage
+        setTimer(displayNumber, 1200);
+      }
+      function displayNumber() {
+        if(val != 3) {
+          removeAll();
+        }
+        add(showWillStart);
+        var number = new Text(val, "100pt Archivo");
+        number.setPosition(getWidth()/2 - 50, getHeight()/2);
+        add(number);
+        val--;
+        if(val < 0) {
+          cont = true;
+          stopTimer(displayNumber);
+          stageSet();
+        }
+      }
+      function stageSet() {
+        removeAll();
+        stage.setSize(getWidth(), getHeight());
+        add(stage);
+
+        var crowdWidth = getWidth();
+        var crowdHeight = (crowdWidth * 159) / 612;
+        crowd.setSize(crowdWidth, crowdHeight);
+        crowd.setPosition(0, getHeight() - (getHeight()* 0.19));
+        add(crowd);
+
+        setTimer(crowdMove, 10);
+      }
+      function crowdMove() {
+        
       }
       // Your code goes here
       if (typeof start === 'function') {
