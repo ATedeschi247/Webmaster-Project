@@ -45,21 +45,30 @@
         </div>
       </div>
     </nav>
+    <img id="band" src="https://www.pngall.com/wp-content/uploads/3/Band-Silhouette-Transparent.png" alt="Image of Band">
     <canvas class="codehs-editor-canvas" id="canvas" width="300" height="300"></canvas>
     <script>
     window.onload = function() {
       var val = 3;
       var cont = false;
-      var moveUp;
+      var dyCrowd = -50;
 
       var showWillStart = new Text("Get ready! The show will start in:", "50pt Archivo");
       var stage = new WebImage("https://thumbs.dreamstime.com/b/concert-stage-screen-spotlights-illuminated-vector-cartoon-illustration-empty-scene-rock-festival-show-181940140.jpg");
       var crowd = new WebImage("https://media.istockphoto.com/vectors/crowd-silhouette-vector-id1274685526?k=20&m=1274685526&s=612x612&w=0&h=yuMNU3w7kR_9FJ1wVxxFKPbAnNOl1AlYpfv7xSbIwOg=");
+      var light1;
+      var light2;
 
       function start() {
         //Canvas dimensions
         document.getElementById('canvas').height = window.outerHeight - 125;
         document.getElementById('canvas').width = window.outerWidth-1;
+
+        document.getElementById('band').width = (0.30 * window.innerWidth);
+        document.getElementById('band').style.left = ((document.getElementById('canvas').width/2)-document.getElementById('band').width/2) + "px";
+        document.getElementById('band').style.top = (document.getElementById('canvas').height / 2) + "px";
+        console.log(document.getElementById('band').width);
+        console.log(document.getElementById('band').style.left);
 
         showWillStart.setColor(Color.black);
         showWillStart.setPosition(getWidth()/2 - 450, getHeight()/2 - (getHeight()*.25));
@@ -93,10 +102,27 @@
         crowd.setPosition(0, getHeight() - (getHeight()* 0.19));
         add(crowd);
 
-        setTimer(crowdMove, 10);
+        document.getElementById('band').style.display = "block";
+
+        setTimer(crowdMove, 900);
+        setTimer(lightChange, 500);
       }
       function crowdMove() {
-        
+        crowd.move(0, dyCrowd);
+        dyCrowd *= -1;
+      }
+      function lightChange() {
+        light1 = new Line(0.95 * getWidth(), 0, getWidth()/2 + 30 - (0.3 * window.innerWidth)/2, getHeight()/2 + 170); //top right to middle
+        light2 = new Line(0.05 * getWidth(), 0, getWidth()/2 - 30 + (0.3 * window.innerWidth)/2, getHeight()/2 + 170);
+
+        light1.setColor(Randomizer.nextColor());
+        light2.setColor(Randomizer.nextColor());
+
+        light1.setLineWidth(100);
+        light2.setLineWidth(100);
+
+        add(light1);
+        add(light2);
       }
       // Your code goes here
       if (typeof start === 'function') {
